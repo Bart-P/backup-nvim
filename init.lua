@@ -9,5 +9,6 @@ require "user.gitsigns"
 require "user.treesitter"
 require "user.autopairs"
 require "user.nvim-tree"
+require "user.bufferline"
 
 

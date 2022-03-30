@@ -41,8 +41,6 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
 
-  -- TODO move all plugin config to separate files
-
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
@@ -50,6 +48,9 @@ return packer.startup(function(use)
   use "navarasu/onedark.nvim" -- One Dark theme
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "windwp/nvim-ts-autotag" -- Autotags and autorename tags with treesitter
+  use 'kyazdani42/nvim-tree.lua'
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
   -- TODO set up whichkey to show all the descriptions of keybindings, for ex when leader is pressed no added personal keybindings are shown
   use {
     "folke/which-key.nvim",
@@ -60,8 +61,6 @@ return packer.startup(function(use)
       }
     end
   }
-
-  use 'kyazdani42/nvim-tree.lua'
 
     -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
