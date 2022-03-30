@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use "navarasu/onedark.nvim" -- One Dark theme
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "windwp/nvim-ts-autotag" -- Autotags and autorename tags with treesitter
+  -- TODO set up whichkey to show all the descriptions of keybindings, for ex when leader is pressed no added personal keybindings are shown
   use {
     "folke/which-key.nvim",
     config = function()
@@ -59,13 +60,8 @@ return packer.startup(function(use)
       }
     end
   }
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    config = function() require'nvim-tree'.setup {} end
-  }
+
+  use 'kyazdani42/nvim-tree.lua'
 
     -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
