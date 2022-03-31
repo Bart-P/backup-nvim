@@ -50,16 +50,9 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
-	-- TODO set up whichkey to show all the descriptions of keybindings, for ex when leader is pressed no added personal keybindings are shown
-	use({
-		"folke/which-key.nvim",
-		config = function()
-			require("which-key").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-			})
-		end,
-	})
+	use("folke/which-key.nvim")
+	use("akinsho/toggleterm.nvim")
+	use("nvim-lualine/lualine.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
