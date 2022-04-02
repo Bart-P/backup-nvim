@@ -13,11 +13,9 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		-- formatting.black.with { extra_args = { "--fast" } },
 		formatting.yapf,
 		formatting.stylua,
 		diagnostics.flake8,
-		-- actions.eslint,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
