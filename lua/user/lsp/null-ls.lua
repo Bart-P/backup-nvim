@@ -7,7 +7,7 @@ end
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
-local actions = null_ls.builtins.code_actions
+-- local actions = null_ls.builtins.code_actions
 
 null_ls.setup({
 	debug = false,
@@ -17,7 +17,7 @@ null_ls.setup({
 		formatting.yapf,
 		formatting.stylua,
 		diagnostics.flake8,
-		actions.eslint,
+		-- actions.eslint,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
@@ -25,7 +25,6 @@ null_ls.setup({
             augroup LspFormatting
             autocmd! * <buffer>
             autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-            autocmd BufWritePost *.ts EslintFixAll
             augroup END
             ]])
 		end
