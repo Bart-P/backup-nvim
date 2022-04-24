@@ -49,9 +49,9 @@ return packer.startup(function(use)
 	use("windwp/nvim-ts-autotag") -- Autotags and autorename tags with treesitter
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
-	use("moll/vim-bbye")
+	use("moll/vim-bbye") -- Smarter closing buffers
 	use("folke/which-key.nvim")
-	use("akinsho/toggleterm.nvim")
+	-- use("akinsho/toggleterm.nvim") -- TODO tmux is enough, no toggleterm needed? After some testing out remove this and the config
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons") -- nice icons in nvim-tree and other plugins
 	use("numToStr/Comment.nvim") -- comment line on gcc
@@ -67,18 +67,14 @@ return packer.startup(function(use)
 		end,
 	})
 	use({
-		-- TODO configure projects with Telescope to fast switch between projects
-		-- TODO and configure <leader>p for project options
-		"ahmedkhalf/project.nvim",
+		"rmagatti/auto-session",
 		config = function()
-			require("project_nvim").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
+			require("auto-session").setup({
+				log_level = "info",
+				auto_session_suppress_dirs = { "~/", "~/Projects" },
 			})
 		end,
 	})
-	-- TODO check out some session saving plugins
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
