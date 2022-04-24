@@ -53,6 +53,32 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("nvim-lualine/lualine.nvim")
+	use("kyazdani42/nvim-web-devicons") -- nice icons in nvim-tree and other plugins
+	use("numToStr/Comment.nvim") -- comment line on gcc
+	use("JoosepAlviste/nvim-ts-context-commentstring") -- context commenting, for ex in rxjs files
+	use("lewis6991/gitsigns.nvim") -- change signs on the left signs wirh some nice functions like go to next change, preview what was changed etc.
+	use({ -- Show css colors
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup({
+				css = { rgb_fn = true }, -- Enable parsing rgb(...) functions in css.
+				html = { names = true }, -- Disable parsing "names" like Blue or Gray
+			})
+		end,
+	})
+	use({
+		-- TODO configure projects with Telescope to fast switch between projects
+		-- TODO and configure <leader>p for project options
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	-- TODO check out some session saving plugins
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -62,10 +88,6 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp") -- use cmp to communicate with lsp
 	use("hrsh7th/cmp-nvim-lua")
-	use("kyazdani42/nvim-web-devicons") -- nice icons in nvim-tree and other plugins
-	use("numToStr/Comment.nvim") -- comment line on gcc
-	use("JoosepAlviste/nvim-ts-context-commentstring") -- context commenting, for ex in rxjs files
-	use("lewis6991/gitsigns.nvim") -- change signs on the left signs wirh some nice functions like go to next change, preview what was changed etc.
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -75,7 +97,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	use("jose-elias-alvarez/nvim-lsp-ts-utils") -- for formatters and linters
+	use("jose-elias-alvarez/nvim-lsp-ts-utils") -- better formatting and linting for ts
 
 	-- fuzzy finding
 	use("nvim-telescope/telescope.nvim")
@@ -86,7 +108,6 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-	use("nvim-treesitter/nvim-treesitter-angular")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
