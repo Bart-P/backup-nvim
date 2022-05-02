@@ -1,3 +1,4 @@
+-- TODO - can be deleted if not needed..
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
 	return

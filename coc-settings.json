@@ -1,0 +1,13 @@
+{
+  "Lua.telemetry.enable": true,
+  "suggest.floatEnable": true,
+  "suggest.detailField": "menu",
+  "suggest.autoTrigger": "always",
+  "suggest.selection": "recentlyUsed",
+  "eslint.autoFixOnSave": true,
+  "suggest.enablePreview": false,
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "prettier.semi": false,
+  "prettier.bracketSpacing": true,
+  "prettier.singleQuote": true
+}
