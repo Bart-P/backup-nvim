@@ -45,7 +45,6 @@ return packer.startup(function(use)
   use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
   use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
   use("navarasu/onedark.nvim") -- One Dark theme
-  use("sainnhe/gruvbox-material") -- gruvbox-material theme
   use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
   use("windwp/nvim-ts-autotag") -- Autotags and autorename tags with treesitter
   use("kyazdani42/nvim-tree.lua")
