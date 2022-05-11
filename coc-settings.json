@@ -9,5 +9,9 @@
   "coc.preferences.formatOnSaveFiletypes": ["*"],
   "prettier.semi": false,
   "prettier.bracketSpacing": true,
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "signature.enable": true,
+  "signature.preferShownAbove": true,
+  "signature.target": "float",
+  "signature.triggerSignatureWait": 500
 }

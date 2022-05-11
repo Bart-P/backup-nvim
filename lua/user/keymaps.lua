@@ -25,9 +25,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<S-k>", ":call CocActionAsync('doHover')<CR>", opts)
+keymap("n", "<S-k>", "<cmd>call CocActionAsync('doHover')<CR>", opts)
 -- does not seem to work..
-keymap("n", "<gd>", ":call CocActionAsync('jumpDefinition')<CR>", opts)
+keymap("n", "<gd>", "<cmd>call CocActionAsync('jumpDefinition')<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -45,6 +45,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- keymap("i", "jk", "<ESC>", opts)
 keymap("i", "<C-k>", "<C-p>", opts)
 keymap("i", "<C-j>", "<C-n>", opts)
+keymap("i", "<C-s>", "<cmd>call CocActionAsync('showSignatureHelp')<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
